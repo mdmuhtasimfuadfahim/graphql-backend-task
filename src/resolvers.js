@@ -2,7 +2,7 @@
 * @file resolvers.js
 * @description GraphQL resolvers for handling queries and fetching data from JSON files
 * @version 1.0
-* @license MIT
+* @license GNU
 * @created 2023-10-01
 **/
 

@@ -2,7 +2,7 @@
 * @file schema.js
 * @description GraphQL schema definition for NodeObject and related types
 * @version 1.0
-* @license MIT
+* @license GNU
 * @created 2023-10-01
 * @modified 2023-10-01
 **/

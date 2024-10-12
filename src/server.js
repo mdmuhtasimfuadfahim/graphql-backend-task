@@ -2,7 +2,7 @@
 * @file server.js
 * @description Apollo Server setup and configuration
 * @version 1.0
-* @license MIT
+* @license GNU
 * @created 2023-10-01
 **/
 

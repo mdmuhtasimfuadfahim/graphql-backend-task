@@ -2,7 +2,7 @@
 * @file auth.js
 * @description Authentication middleware for verifying JWT tokens
 * @version 1.0
-* @license MIT
+* @license GNU
 * @created 2023-10-01
 **/
 

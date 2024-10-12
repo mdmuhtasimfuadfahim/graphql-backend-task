@@ -2,7 +2,7 @@
 * @file generateToken.js
 * @description Script to generate a JWT token with specified JSON data
 * @version 1.0
-* @license MIT
+* @license GNU
 * @created 2023-10-01
 **/
 
