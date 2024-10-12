@@ -99,6 +99,10 @@ const typeDefs = gql`
     triggers: [Trigger]
     action(actionId: ID): Action
     actions: [Action]
+    response(responseId: ID): Response
+    responses: [Response]
+    resourceTemplate(resourceTemplateId: ID): ResourceTemplate
+    resourceTemplates: [ResourceTemplate]
   }
 `;
 

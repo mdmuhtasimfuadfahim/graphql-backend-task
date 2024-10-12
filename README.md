@@ -112,6 +112,44 @@ src/
 }
 ```
 
+4. Fetch all Responses:
+
+```json
+{
+  "query": "query GetResponses { responses {_id name description platforms tags }}"
+}
+```
+
+5. Fetch a Response by ID:
+
+```json
+{
+  "query": "query GetResponse($responseId: ID) { response(responseId: $responseId) {_id name description platforms tags }}",
+  "variables": {
+    "responseId": "6297171270a0c17c5689cd0c"
+  }
+}
+```
+
+6. Fetch all Resource Templates:
+
+```json
+{
+  "query": "query GetResourceTemplates { resourceTemplates {_id name type description schema requestedVerification verified published integrationId functionString key }}"
+}
+```
+
+7. Fetch a Resource Template by ID:
+
+```json
+{
+  "query": "query GetResourceTemplate($resourceTemplateId: ID) { resourceTemplate(resourceTemplateId: $resourceTemplateId) {_id name type description schema requestedVerification verified published integrationId functionString key }}",
+  "variables": {
+    "resourceTemplateId": "61e9ba20f9b581f25a2dbf51"
+  }
+}
+```
+
 [Back To The Top](#title)
 
 <h2 id="test">👌 Test</h2>

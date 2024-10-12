@@ -78,6 +78,40 @@ const resolvers = {
         * @return {Object|Array} - The action object with the specified ID or an array of all actions.
         **/
         actions: (_, { actionId }) => actionId ? actions.find(action => action._id === actionId) : actions,
+
+        /**
+        * response
+        * Resolver function to fetch a response by its ID or return all responses if no ID is provided.
+        * @param {Object} _ - Unused parameter.
+        * @param {Object} args - Arguments object containing responseId.
+        * @param {string} [args.responseId] - The ID of the response to fetch.
+        * @return {Object|Array} - The response object with the specified ID or an array of all responses.
+        **/
+        response: (_, { responseId }) => responseId ? responses.find(response => response._id === responseId) : responses,
+
+        /**
+        * responses
+        * Resolver function to return all responses.
+        * @return {Array} - An array of all responses.
+        **/
+        responses: () => responses,
+
+        /**
+        * resourceTemplate
+        * Resolver function to fetch a resource template by its ID or return all resource templates if no ID is provided.
+        * @param {Object} _ - Unused parameter.
+        * @param {Object} args - Arguments object containing resourceTemplateId.
+        * @param {string} [args.resourceTemplateId] - The ID of the resource template to fetch.
+        * @return {Object|Array} - The resource template object with the specified ID or an array of all resource templates.
+        **/
+        resourceTemplate: (_, { resourceTemplateId }) => resourceTemplateId ? resourceTemplates.find(template => template._id === resourceTemplateId) : resourceTemplates,
+
+        /**
+        * resourceTemplates
+        * Resolver function to return all resource templates.
+        * @return {Array} - An array of all resource templates.
+        **/
+        resourceTemplates: () => resourceTemplates,
     },
     NodeObject: {
         /**
