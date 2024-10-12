@@ -1,0 +1,26 @@
+{
+  "name": "apollo-graphql-server",
+  "version": "0.0.1",
+  "description": "An API server on GraphQL for complex quiries",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "generate-token": "node src/generate-token/generateJwtToken.js"
+  },
+  "keywords": [
+    "GraphQL",
+    "Apollo",
+    "NodeJS",
+    "API"
+  ],
+  "author": "Md. Muhtasim Fuad Fahim <muhtasimfuadfahim@proton.me>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
+    "graphql-scalars": "^1.23.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

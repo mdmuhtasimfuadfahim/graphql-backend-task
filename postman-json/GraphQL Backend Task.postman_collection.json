@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "4e6b3e5c-3c4f-4cce-b67b-01028e11b7bd",
+		"name": "GraphQL Backend Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25506484"
+	},
+	"item": [
+		{
+			"name": "request with responses postActions triggers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": \"query GetNode($nodeId: ID) { node(nodeId: $nodeId) { _id createdAt updatedAt name description parents root trigger { _id name description params functionString resourceTemplateId createdAt updatedAt} responses { _id name description platforms tags createdAt updatedAt } actions postActions { _id name functionString description params resourceTemplateId resourceTemplate {_id name type key description schema integrationId functionString requestedVerification verified published createdAt updatedAt } createdAt updatedAt } position priority compositeId global colour redirect memberTagging memberTagging } }\",\n  \"variables\": {\n    \"nodeId\": \"6297172e70a0c165b989cd10\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}",
+					"host": [
+						"{{BASE_URL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:3000/",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImF1dGhUb2tlbiI6ImU2ZGQzMDZiNGYzYjFhOWNlYWM1NjNhZGJjNDIwNWM4MzdlYTU5ZGY3ZDFlZGMyNDJlZDAxMjUzZjY4YWU4OTQiLCJ0aW1lU3RhbXAiOiIyMDI0LTEwLTEyVDA4OjMyOjQzLjc4NloiLCJpYXQiOjE3Mjg3MjE5NjN9.yY0CPYQk1vJHdIQ1ABtcoemkkZMt41Zlq7AQv5iifeE",
+			"type": "string"
+		}
+	]
+}

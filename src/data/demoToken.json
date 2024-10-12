@@ -1,0 +1,9 @@
+[
+    {
+        "userId": 1,
+        "authToken": "e6dd306b4f3b1a9ceac563adbc4205c837ea59df7d1edc242ed01253f68ae894",
+        "timeStamp": "2024-10-12T08:32:43.786Z",
+        "iat": 1728712368,
+        "exp": 1728715968
+    }
+]
