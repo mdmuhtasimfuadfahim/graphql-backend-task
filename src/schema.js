@@ -2,7 +2,7 @@
 * @file schema.js
 * @description GraphQL schema definition for NodeObject and related types
 * @version 1.0
-* @license GNU
+* @license MIT
 * @created 2023-10-01
 * @modified 2023-10-01
 **/
@@ -74,13 +74,16 @@ const typeDefs = gql`
     updatedAt: Long
     name: String!
     description: String
-    parents: JSON
+    parents: [NodeObject]
     parentIds: [ID]
+    responseIds: [ID]
+    actionIds: [ID]
     root: Boolean
     redirect: JSON
     analytics: String
     memberTagging: String
     type: String
+    triggerId: ID
     trigger: Trigger
     responses: [Response]
     actions: String

@@ -156,6 +156,82 @@ const resolvers = {
             }
             return null;
         },
+
+        /**
+        * triggerId
+        * Resolver function to fetch the trigger ID associated with a node.
+        * @param {Object} node - The node object.
+        * @return {String} - The trigger ID associated with the node.
+        **/
+        triggerId: (node) => node.trigger,
+
+        /**
+        * parentIds
+        * Resolver function to fetch the parent IDs associated with a node.
+        * @param {Object} node - The node object.
+        * @return {Array} - An array of parent IDs associated with the node.
+        **/
+        parentIds: (node) => node.parents,
+
+        /**
+         * responseIds
+         * Resolver function to fetch the response IDs associated with a node.
+         * @param {Object} node - The node object.
+         * @return {Array} - An array of response IDs associated with the node.
+         **/
+        responseIds: (node) => node.responses,
+
+        /**
+         * actionIds
+         * Resolver function to fetch the action IDs associated with a node.
+         * @param {Object} node - The node object.
+         * @return {Array} - An array of action IDs associated with the node.
+         **/
+        actionIds: (node) => node.postActions,
+
+        /**
+        * parents
+        * Resolver function to fetch the parent objects associated with a node.
+        * @param {Object} node - The node object.
+        * @return {Array} - An array of parent objects associated with the node.
+        **/
+        parents: (node) => {
+            if (Array.isArray(node.parents)) {
+                return node.parents.map(id => {
+                    const parentNode = nodes.find(parent => parent._id === id || parent.compositeId === id);
+                    if (parentNode) {
+                        return {
+                            _id: parentNode._id,
+                            createdAt: parentNode.createdAt,
+                            updatedAt: parentNode.updatedAt,
+                            name: parentNode.name,
+                            description: parentNode.description,
+                            parents: parentNode.parents,
+                            parentIds: parentNode.parents,
+                            responseIds: parentNode.responses,
+                            actionIds: parentNode.actions,
+                            root: parentNode.root,
+                            redirect: parentNode.redirect,
+                            analytics: parentNode.analytics,
+                            memberTagging: parentNode.memberTagging,
+                            type: parentNode.type,
+                            triggerId: parentNode.trigger,
+                            trigger: parentNode.trigger,
+                            responses: parentNode.responses,
+                            actions: parentNode.actions,
+                            postActions: parentNode.postActions,
+                            priority: parentNode.priority,
+                            position: parentNode.position,
+                            compositeId: parentNode.compositeId,
+                            global: parentNode.global,
+                            colour: parentNode.colour
+                        };
+                    }
+                    return null;
+                }).filter(parent => parent !== null);
+            }
+            return [];
+        },
     },
     Trigger: {
         /**

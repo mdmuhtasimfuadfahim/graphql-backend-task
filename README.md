@@ -76,7 +76,7 @@ src/
 
 ```json
 {
-  "query": "query GetNode($nodeId: ID) { node(nodeId: $nodeId) { _id createdAt updatedAt name description parents root trigger { _id name description params functionString resourceTemplateId createdAt updatedAt} responses { _id name description platforms tags createdAt updatedAt } actions postActions { _id name functionString description params resourceTemplateId resourceTemplate {_id name type key description schema integrationId functionString requestedVerification verified published createdAt updatedAt } createdAt updatedAt } position priority compositeId global colour redirect memberTagging memberTagging } }",
+  "query": "query GetNode($nodeId: ID) { node(nodeId: $nodeId) { _id createdAt updatedAt name description parents {name} root trigger { _id name description params functionString resourceTemplateId createdAt updatedAt} responses { _id name description platforms tags createdAt updatedAt } actions postActions { _id name functionString description params resourceTemplateId resourceTemplate {_id name type key description schema integrationId functionString requestedVerification verified published createdAt updatedAt } createdAt updatedAt } position priority compositeId global colour redirect memberTagging memberTagging } }",
   "variables": {
     "nodeId": "6297172e70a0c165b989cd10"
   }
@@ -146,6 +146,17 @@ src/
   "query": "query GetResourceTemplate($resourceTemplateId: ID) { resourceTemplate(resourceTemplateId: $resourceTemplateId) {_id name type description schema requestedVerification verified published integrationId functionString key }}",
   "variables": {
     "resourceTemplateId": "61e9ba20f9b581f25a2dbf51"
+  }
+}
+```
+
+8. Random query:
+
+```json
+{
+  "query": "query Node($nodeId: ID!) { node(nodeId: $nodeId) { name triggerId trigger {_id resourceTemplateId } responseIds actionIds parentIds parents { name description actionIds parentIds responseIds } } } ",
+  "variables": {
+    "nodeId": "62971a9570a0c12bb389cd13"
   }
 }
 ```
