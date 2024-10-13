@@ -4,14 +4,14 @@
 
 ### 🔖 Table Of Contents
 
-- 🌱 Prerequisites
-- ⏬ Installing
-- 👨‍💻 Example
-- 👌 Test
+- 🌱 [Prerequisites](#prerequisites)
+- ⏬ [Installing](#installing)
+- 👨‍💻 [Example](#example)
+- 👌 [Test](#test)
 - 💡 [How To Contribute](#how-to-contribute)
 - 📈 [Project Activity](#project-activity)
-- 👤 Author
-- 🔏 License
+- 👤 [Author](#author)
+- 🔏 [License](#license)
 
 ---
 
